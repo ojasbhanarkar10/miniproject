@@ -1,0 +1,15 @@
+<div id="logreg-forms">
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
+            Sign in with
+        </h1>
+        <div class="social-login">
+            <hr />
+            <button (click) = "login()" class="btn google-btn social-btn" type="button">
+                <span><i class="fab fa-google"></i> Sign In With Google</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<ng-container *ngIf="login$ | async"></ng-container>

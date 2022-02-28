@@ -1,0 +1,16 @@
+<div class="d-flex align-items-center justify-content-center" *ngIf="user$ | async as user; else loading">
+    <div class="card" style="width: 18rem">
+        <img src="{{user.photoURL}}" class="card-img-top" alt="{{user.displayName}}" />
+        <div class="card-body">
+            <h5 class="card-title">{{user.displayName}}</h5>
+            <p class="card-text">{{user.email}}</p>
+            <button (click) = "logout()" class="btn btn-primary">Logout</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <h1>Loading...</h1>
+</ng-template>
+
+<ng-container *ngIf="logout$ | async"></ng-container>
