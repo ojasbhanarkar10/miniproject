@@ -5,11 +5,11 @@ import { tap } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class ProfileComponent{
+export class HomeComponent {
 
   user$ = this.authService.user$;
   logout$!: Observable<any>;
@@ -26,5 +26,6 @@ export class ProfileComponent{
         tap(() => this.router.navigateByUrl('.login'))
       )
   }
+
 
 }

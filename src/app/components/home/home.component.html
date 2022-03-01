@@ -13,12 +13,4 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="d-flex align-items-center justify-content-center" *ngIf="user$ | async as user">
-    <div class="card" style="width: 18rem">
-        <img src="{{user.photoURL}}" class="card-img-top" alt="{{user.displayName}}" />
-        <div class="card-body">
-            <h5 class="card-title">{{user.displayName}}</h5>
-            <p class="card-text">{{user.email}}</p>
-        </div>
-    </div>
-</div>
+<ng-container *ngIf="logout$ | async"></ng-container>

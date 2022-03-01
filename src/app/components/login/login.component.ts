@@ -22,7 +22,7 @@ export class LoginComponent {
     this.login$ = this.authService
       .login()
       .pipe(
-        tap(() => this.router.navigateByUrl('/profile'))
+        tap(() => this.router.navigateByUrl('/home'))
       )
   }
 
