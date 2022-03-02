@@ -7,18 +7,23 @@
         <div>
             <button mat-button [routerLink]="['/home']">Home</button>
             <button mat-button [routerLink]="['/profile']">My Profile</button>
-            <button mat-button>Create Listing</button>
-            <button (click) = "logout()" mat-button>Sign Out</button>
+            <button mat-button [routerLink]="['/listing']">Create Listing</button>
+            <button (click)="logout()" mat-button>Sign Out</button>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="d-flex align-items-center justify-content-center" *ngIf="user$ | async as user">
-    <div class="card" style="width: 18rem">
-        <img src="{{user.photoURL}}" class="card-img-top" alt="{{user.displayName}}" />
-        <div class="card-body">
-            <h5 class="card-title">{{user.displayName}}</h5>
-            <p class="card-text">{{user.email}}</p>
-        </div>
+<br>
+<div *ngIf="user$ | async as user">
+    <div class="profile-card">
+        <mat-card>
+            <img src="{{user.photoURL}}" class="profile-pic">
+            
+            <mat-divider inset></mat-divider>
+            <mat-card-header>
+                <mat-card-title class="profile-card-title">{{user.displayName}}</mat-card-title>
+                <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
     </div>
 </div>
