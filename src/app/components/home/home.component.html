@@ -8,9 +8,13 @@
             <button mat-button [routerLink]="['/home']">Home</button>
             <button mat-button [routerLink]="['/profile']">My Profile</button>
             <button mat-button [routerLink]="['/listing']">Create Listing</button>
-            <button (click) = "logout()" mat-button>Sign Out</button>
+            <button (click)="logout()" mat-button>Sign Out</button>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<div>
+    <button mat-button class="browse-button">Browse Listings</button>
+</div>
 
 <ng-container *ngIf="logout$ | async"></ng-container>
