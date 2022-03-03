@@ -1,1 +1,18 @@
-<p>listing works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div>
+            CorporateHomez
+        </div>
+        <span class="flexExpand"></span>
+        <div>
+            <button mat-button [routerLink]="['/home']">Home</button>
+            <button mat-button [routerLink]="['/profile']">My Profile</button>
+            <button mat-button [routerLink]="['/listing']">Create Listing</button>
+            <button (click)="logout()" mat-button>Sign Out</button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<p>listing-page works!</p>
+
+<ng-container *ngIf="logout$ | async"></ng-container>
