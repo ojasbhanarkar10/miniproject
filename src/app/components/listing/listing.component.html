@@ -13,6 +13,13 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<p>listing-page works!</p>
+<div class="listing-style">
+    <h1>Create Listing</h1>
+
+    <label for="Image">Image File</label>
+    <input type="file" (change)="upload($event)" accept="*.png.jpg" id="">
+    <button (click)="uploadImage()">Upload Image</button>
+
+</div>
 
 <ng-container *ngIf="logout$ | async"></ng-container>
